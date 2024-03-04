@@ -9,10 +9,19 @@ soup = bs4(response.content, "html.parser")
 
 izm = soup.find("div", class_="r64-events").text
 
+izmC = ""
 
 for i in izm.splitlines():
     if choice in i:
-        print(i)
+        izmC = izmC + i
+        izmC = izmC + "\n"
+
+
+if not izmC:
+    print("Not found")
+else:
+    print(izmC)
+
 
 
 
